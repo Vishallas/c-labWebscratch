@@ -18,7 +18,7 @@ With this you're ready to use it. Just run the **main.py** file in terminal or c
 
 The output of the main.py will be like below one.
 
-> ![Screenshot of the output](images/scrsht.png)
+![Screenshot of the output](images\scrsht.png)
 
 ---
 

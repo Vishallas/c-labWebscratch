@@ -23,3 +23,5 @@ The output of the main.py will be like below one.
 ---
 
 Take a look at [My friend's site](https://ece-clab.netlify.app)
+
+added test.

@@ -1,6 +1,7 @@
 import requests
 
 print("C-programs")
+
 path = [
   { "path": "./c-source/list-adt.c", "title": "List ADT Using Array" },
   { "path": "./c-source/sll.c", "title": "Singly Linked List" },
@@ -31,19 +32,16 @@ path = [
 
 for idx,data in enumerate(path,1):
     print(idx,data["title"])
-# path = requests.get(f"https://ece-clab.netlify.app//index.js")
-# soup = bs(path.content,features="html.parser")
-# print()
 
 ch = int(input("Enter the choice "))
-fp = path[ch-1]["path"][1:]
-p = fp[10:]
 
-#print(fp,p)
-page = requests.get(f"https://ece-clab.netlify.app/{fp}")
-#print(page)
+link = path[ch-1]["path"][1:]
+filename = link[10:]
 
-with open(p,'wb') as f:
+page = requests.get(f"https://ece-clab.netlify.app/{link}") 
+
+#Writing the page data to the file
+with open(filename,'wb') as f:
      f.write(page.content)
 
 print("File copied")

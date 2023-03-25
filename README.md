@@ -20,10 +20,7 @@ Enter the program's number in the terminal.
 
 The output of the main.py will be like below one.
 
-<<<<<<< HEAD
 ![screenshot](https://user-images.githubusercontent.com/103063354/227778551-1c34e89d-8b88-425c-a48d-b6f938b6ab91.jpg)
-=======
-<<<<<<< HEAD
 
 ---
 

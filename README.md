@@ -22,4 +22,4 @@ The output of the main.py will be like below one.
 
 ---
 
-Take a look at [Myfriend's site](https://ece-clab.netlify.app)
+Take a look at [My friend's site](https://ece-clab.netlify.app)

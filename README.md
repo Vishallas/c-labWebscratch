@@ -6,5 +6,5 @@ This is a fun project to scrap a data from the website. And a main objective is 
 
 simply clone this repo.
 
->git clone https://github.com/Vishallas/c-labWebscratch.git
+>`git clone https://github.com/Vishallas/c-labWebscratch.git`
 

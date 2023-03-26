@@ -6,6 +6,18 @@ import sys
 
 print("C-programs")
 
+done = False
+#here is the animation
+def animate():
+    for c in itertools.cycle(['|', '/', '-', '\\']):
+        if done:
+            break
+        sys.stdout.write('\rWorking on it ' + c)
+        sys.stdout.flush()
+        time.sleep(0.1)
+    sys.stdout.flush()
+    sys.stdout.write('\rDone!               ')
+
 path = [
   { "path": "./c-source/list-adt.c", "title": "List ADT Using Array" },
   { "path": "./c-source/sll.c", "title": "Singly Linked List" },
@@ -42,21 +54,12 @@ ch = int(input("Enter the choice : "))
 link = path[ch-1]["path"][1:]
 filename = link[10:]
 
-page = requests.get(f"https://ece-clab.netlify.app/{link}") 
-
-done = False
-#here is the animation
-def animate():
-    for c in itertools.cycle(['|', '/', '-', '\\']):
-        if done:
-            break
-        sys.stdout.write('\rWorking on it ' + c)
-        sys.stdout.flush()
-        time.sleep(0.1)
-    sys.stdout.write('\rDone!     ')
-
 t = threading.Thread(target=animate)
 t.start()
+
+page = requests.get(f"https://ece-clab.netlify.app/{link}") 
+
+
 
 #Writing the page data to the file
 with open(filename,'wb') as f:
@@ -65,5 +68,3 @@ with open(filename,'wb') as f:
 #long process here
 time.sleep(1)
 done = True
-
-print("File copied")

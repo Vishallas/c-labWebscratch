@@ -13,6 +13,7 @@ Then install the requirements library,
 > `pip install -r requirements.txt`
 
 With this you're ready to use it. Just run the **main.py** file in terminal or cmd.
+Enter the program's number in the terminal.
 
 ## Demo
 

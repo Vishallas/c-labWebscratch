@@ -1,4 +1,8 @@
 import requests
+import itertools
+import threading
+import time
+import sys
 
 print("C-programs")
 
@@ -33,15 +37,33 @@ path = [
 for idx,data in enumerate(path,1):
     print(idx,data["title"])
 
-ch = int(input("Enter the choice "))
+ch = int(input("Enter the choice : "))
 
 link = path[ch-1]["path"][1:]
 filename = link[10:]
 
 page = requests.get(f"https://ece-clab.netlify.app/{link}") 
 
+done = False
+#here is the animation
+def animate():
+    for c in itertools.cycle(['|', '/', '-', '\\']):
+        if done:
+            break
+        sys.stdout.write('\rWorking on it ' + c)
+        sys.stdout.flush()
+        time.sleep(0.1)
+    sys.stdout.write('\rDone!     ')
+
+t = threading.Thread(target=animate)
+t.start()
+
 #Writing the page data to the file
 with open(filename,'wb') as f:
      f.write(page.content)
+
+#long process here
+time.sleep(1)
+done = True
 
 print("File copied")

@@ -8,9 +8,9 @@ Simply clone this repo.
 
 > `git clone https://github.com/Vishallas/c-labWebscratch.git`
 
-Then install requests(HTTP library) in python,
+Then install the requirements library,
 
-> `pip install requests`
+> `pip install -r requirements.txt`
 
 With this you're ready to use it. Just run the **main.py** file in terminal or cmd.
 
@@ -22,6 +22,6 @@ The output of the main.py will be like below one.
 
 ---
 
-Take a look at [My friend's site](https://ece-clab.netlify.app)
+Take a look at my [:anger:](https://github.com/Saffron-codes) friend's [site](https://ece-clab.netlify.app)
 
 added test.

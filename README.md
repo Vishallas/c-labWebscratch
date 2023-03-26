@@ -18,7 +18,7 @@ With this you're ready to use it. Just run the **main.py** file in terminal or c
 
 The output of the main.py will be like below one.
 
-![Screenshot of the output](images/scrsht.jpg)
+![screenshot](https://user-images.githubusercontent.com/103063354/227778551-1c34e89d-8b88-425c-a48d-b6f938b6ab91.jpg)
 
 ---
 

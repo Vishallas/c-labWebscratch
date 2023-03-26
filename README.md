@@ -23,5 +23,3 @@ The output of the main.py will be like below one.
 ---
 
 Take a look at my [:anger:](https://github.com/Saffron-codes) friend's [site](https://ece-clab.netlify.app)
-
-added test.

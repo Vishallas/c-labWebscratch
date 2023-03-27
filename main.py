@@ -17,9 +17,7 @@ def animate():
     for c in itertools.cycle(['|', '/', '-', '\\']):
         if done:
             break
-        sys.stdout.write('\rWorking on it ' + c)
-        if copied:
-            sys.stdout.flush()  
+        sys.stdout.write('\rWorking on it ' + c) 
         sys.stdout.flush()
         time.sleep(0.1)
     sys.stdout.flush()
@@ -77,15 +75,15 @@ t = threading.Thread(target=animate)
 t.start()
 
 for filename,link in zip(filenameLis,linkLis):
-    copied=False
+
     #page request
     page = requests.get(f"https://ece-clab.netlify.app/{link}") 
 
     #Writing the page data to the file
     with open(filename,'wb') as f:
         f.write(page.content)
-    copied=True
-    #print(filename,"copied !")
+    
+    print(" ",filename,"copied !")
 
 #long process here
 time.sleep(1)

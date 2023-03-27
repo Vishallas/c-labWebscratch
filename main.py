@@ -5,25 +5,27 @@ import time
 import sys
 import pyfiglet
 
-# Banner
+#banner
 fig = pyfiglet.Figlet(font="starwars")
 print(fig.renderText("C - Lab"))
 
 #flag for threading
 done = False
-
+copied = False
 #here is the animation
 def animate():
     for c in itertools.cycle(['|', '/', '-', '\\']):
         if done:
             break
         sys.stdout.write('\rWorking on it ' + c)
+        if copied:
+            sys.stdout.flush()  
         sys.stdout.flush()
         time.sleep(0.1)
     sys.stdout.flush()
     sys.stdout.write('\rDone!               ')
 
-# a list of dictionary with path and tile for each code
+#list of dictionary with path and tile for each code
 path = [
   { "path": "./c-source/list-adt.c", "title": "List ADT Using Array" },
   { "path": "./c-source/sll.c", "title": "Singly Linked List" },
@@ -55,22 +57,35 @@ path = [
 for idx,data in enumerate(path,1):
     print(idx,data["title"])
 
-ch = int(input("Enter the choice : ")) # Getting the input for choice
+ch = input("Enter the choice : ") # Getting the input for choice
 
-#formating the name and link for the file 
-link = path[ch-1]["path"][1:]
-filename = link[10:]
+chlis=list(map(int,ch.strip().split()))
+
+#formating the name and link for the files
+linkLis = [] #stores the link for each files
+filenameLis = [] #stores the name for each files
+
+for i in chlis:
+    link = path[i-1]["path"][1:]
+    filename = link[10:]
+    linkLis.append(link)
+    filenameLis.append(filename)
+    print(i,"-",filename)
 
 #creating a thread for loading 
 t = threading.Thread(target=animate)
 t.start()
 
-# page request
-page = requests.get(f"https://ece-clab.netlify.app/{link}") 
+for filename,link in zip(filenameLis,linkLis):
+    copied=False
+    #page request
+    page = requests.get(f"https://ece-clab.netlify.app/{link}") 
 
-#Writing the page data to the file
-with open(filename,'wb') as f:
-     f.write(page.content)
+    #Writing the page data to the file
+    with open(filename,'wb') as f:
+        f.write(page.content)
+    copied=True
+    #print(filename,"copied !")
 
 #long process here
 time.sleep(1)

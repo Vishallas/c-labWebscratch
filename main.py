@@ -5,11 +5,13 @@ import time
 import sys
 import pyfiglet
 
+# Banner
 fig = pyfiglet.Figlet(font="starwars")
-
 print(fig.renderText("C - Lab"))
 
+#flag for threading
 done = False
+
 #here is the animation
 def animate():
     for c in itertools.cycle(['|', '/', '-', '\\']):
@@ -21,6 +23,7 @@ def animate():
     sys.stdout.flush()
     sys.stdout.write('\rDone!               ')
 
+# a list of dictionary with path and tile for each code
 path = [
   { "path": "./c-source/list-adt.c", "title": "List ADT Using Array" },
   { "path": "./c-source/sll.c", "title": "Singly Linked List" },
@@ -52,17 +55,18 @@ path = [
 for idx,data in enumerate(path,1):
     print(idx,data["title"])
 
-ch = int(input("Enter the choice : "))
+ch = int(input("Enter the choice : ")) # Getting the input for choice
 
+#formating the name and link for the file 
 link = path[ch-1]["path"][1:]
 filename = link[10:]
 
+#creating a thread for loading 
 t = threading.Thread(target=animate)
 t.start()
 
+# page request
 page = requests.get(f"https://ece-clab.netlify.app/{link}") 
-
-
 
 #Writing the page data to the file
 with open(filename,'wb') as f:

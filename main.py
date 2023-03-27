@@ -3,8 +3,11 @@ import itertools
 import threading
 import time
 import sys
+import pyfiglet
 
-print("C-programs")
+fig = pyfiglet.Figlet(font="starwars")
+
+print(fig.renderText("C - Lab"))
 
 done = False
 #here is the animation

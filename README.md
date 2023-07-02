@@ -6,8 +6,8 @@ This is a fun project to scrap a data from the website. And a main objective is 
 
 Simply clone this repo.
 
-> ``` git clone https://github.com/Vishallas/c-labWebscratch.git
-pip install -r requirements.txt ```
+``` > git clone https://github.com/Vishallas/c-labWebscratch.git ```
+``` pip install -r requirements.txt ```
 
 With this you're ready to use it. Just run the **main.py** file in terminal or cmd.
 
